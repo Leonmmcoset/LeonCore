@@ -9,7 +9,7 @@ settings.define("list.show_hidden", {
 })
 
 settings.define("bios.compat_mode", {
-  description = "Attempt some LeonCore compatibility by injecting APIs into _G.",
+  description = "Attempt some LeonOS compatibility by injecting APIs into _G.",
   type = "boolean",
   default = false
 })

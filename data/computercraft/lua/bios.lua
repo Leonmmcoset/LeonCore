@@ -1,7 +1,7 @@
-_G._HOST = _G._HOST .. " (LeonCore 1.0.1)"  
+_G._HOST = _G._HOST .. " (LeonOS 1.0.1)"  
 local fs = rawget(_G, "fs")
 
-_G._RC_ROM_DIR = _RC_ROM_DIR or (...) and fs.exists("/LeonCore") and "/LeonCore" or "/rom"
+_G._RC_ROM_DIR = _RC_ROM_DIR or (...) and fs.exists("/leonos") and "/leonos" or "/rom"
 
 if fs.exists("/.start_rc.lua") and not (...) then
   _G._RC_USED_START = true
@@ -28,7 +28,7 @@ local reboot = pull(os, "restart")
 
 -- `os` extras go in here now.
 local rc = {
-  _NAME = "LeonCore",
+  _NAME = "LeonOS",
   _VERSION = {
     major = 1,
     minor = 0,  
@@ -104,7 +104,7 @@ function rc.sleep(time, no_term)
   until tid == id
 end
 function rc.version()
-  return string.format("LeonCore %d.%d.%d",
+  return string.format("LeonOS %d.%d.%d",
     rc._VERSION.major, rc._VERSION.minor, rc._VERSION.patch)
 end
 -- Lua 5.1?  meh

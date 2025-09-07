@@ -1,6 +1,6 @@
--- LeonCore Updater
+-- LeonOS Updater
 -- Version: 0.3.8
--- This script ensures reliable updates for the LeonCore operating system
+-- This script ensures reliable updates for the LeonOS operating system
 
 -- Ensure core APIs are available
 local fs = rawget(_G, "fs") or error("Filesystem API not available")
@@ -17,11 +17,11 @@ if not http then
 end
 
 -- Configuration
-_G._RC_ROM_DIR = _RC_ROM_DIR or "/LeonCore"
-if _RC_ROM_DIR == "/rom" then _RC_ROM_DIR = "/LeonCore" end
+_G._RC_ROM_DIR = _RC_ROM_DIR or "/leonos"
+if _RC_ROM_DIR == "/rom" then _RC_ROM_DIR = "/leonos" end
 
 local REPO_OWNER = "Leonmmcoset"
-local REPO_NAME = "LeonCore"
+local REPO_NAME = "LeonOS"
 local BRANCH = "main"
 local BASE_PATH = "data/computercraft/lua/"
 
@@ -36,14 +36,14 @@ local function createFailsafe()
       term.setBackgroundColor(0x4000) -- Red background
       term.clear()
       
-      local title = "LeonCore Updater (Failure Notice)"
+      local title = "LeonOS Updater (Failure Notice)"
       term.setTextColor(0x1) -- White text
       local x = math.floor(w/2 - #title/2)
       term.setCursorPos(x > 1 and x or 1, 1)
       term.write(title)
       
       local message = {
-        "A LeonCore update has failed or",
+        "A LeonOS update has failed or",
         "been interrupted.",
         "Your files should remain intact.",
         "",
@@ -163,7 +163,7 @@ local function updateSystem()
     term.setBackgroundColor(0x8000)
     term.setTextColor(0x10) -- Cyan text
     at(1, 1).clearLine()
-    at(1, 1).write("LeonCore Updater")
+    at(1, 1).write("LeonOS Updater")
     at(1, 2).clearLine()
     at(1, 2).write("=====================")
     term.setTextColor(0x1)
@@ -336,7 +336,7 @@ if not success then
   term.clear()
   term.setBackgroundColor(0x4000)
   term.setTextColor(0x1)
-  at(1, 1).write("LeonCore Update Error")
+  at(1, 1).write("LeonOS Update Error")
   at(1, 3).write("An error occurred during the update:")
   at(1, 5).write(err)
   at(1, 7).write("Press any key to exit.")

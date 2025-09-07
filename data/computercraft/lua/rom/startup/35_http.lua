@@ -24,11 +24,11 @@
 -- native http.websocket(url:string[, headers:table])
 --    url is the url to which to open a websocket.  queues a websocket_success
 --    event on success, and websocket_failure on failure.
--- native http.addListener(port:number) (LeonCore-PC only)
+-- native http.addListener(port:number) (LeonOS-PC only)
 --    add a listener on the specified port.  when that port receives data,
 --    the listener queues a http_request(port:number, request, response).
 --    !!the response is not send until response.close() is called!!
--- native http.removeListener(port:number) (LeonCore-PC only)
+-- native http.removeListener(port:number) (LeonOS-PC only)
 --    remove the listener from that port
 
 local rc = ...
@@ -163,6 +163,6 @@ if old.addListener then
   end
 else
   function http.listen()
-    error("This functionality requires LeonCore-PC", 0)
+    error("This functionality requires LeonOS-PC", 0)
   end
 end

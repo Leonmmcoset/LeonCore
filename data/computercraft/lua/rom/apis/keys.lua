@@ -9,12 +9,12 @@ local mcver = tonumber(_HOST:match("%b()"):sub(2,-2):match("1%.(%d+)")) or 0
 if _HOST:match("CCEmuX") then
   -- use the 1.16.5 keymap
   kmap = "lwjgl3"
-elseif mcver <= 12 or _HOST:match("LeonCore%-PC") then
+elseif mcver <= 12 or _HOST:match("LeonOS%-PC") then
   -- use the 1.12.2 keymap
   kmap = "lwjgl2"
 end
 
-local base = dofile("/LeonCore/keymaps/"..kmap..".lua")
+local base = dofile("/leonos/keymaps/"..kmap..".lua")
 local lib = {}
 
 -- reverse-index it!

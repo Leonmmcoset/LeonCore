@@ -6,7 +6,7 @@ _G.package = {}
 
 package.config = "/\n;\n?\n!\n-"
 package.cpath = ""
-package.path = "/LeonCore/apis/?.lua;/LeonCore/modules/main/?.lua;./lib/?.lua;./lib/?/init.lua;./?.lua;./?/init.lua"
+package.path = "/leonos/apis/?.lua;/leonos/modules/main/?.lua;./lib/?.lua;./lib/?/init.lua;./?.lua;./?/init.lua"
 
 local function rm(api)
   local tab = _G[api]
@@ -38,7 +38,7 @@ package.loaded = {
   fs = rm("fs"),
   rs = rm("rs"),
 
-  -- LeonCore-PC APIs
+  -- LeonOS-PC APIs
   periphemu = rm("periphemu"),
   mounter = rm("mounter"),
   config = rm("config"),
@@ -76,7 +76,7 @@ package.searchers = {
 
 local fs = package.loaded.fs
 -- require isn't here yet
-local expect = loadfile("/LeonCore/modules/main/cc/expect.lua")()
+local expect = loadfile("/leonos/modules/main/cc/expect.lua")()
 package.loaded["cc.expect"] = expect
 
 function package.searchpath(name, path, sep, rep)

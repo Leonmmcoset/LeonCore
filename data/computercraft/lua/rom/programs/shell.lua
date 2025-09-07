@@ -12,7 +12,7 @@ local old_bg = term.getBackgroundColor()
 term.setTextColor(colors.white)
 term.setBackgroundColor(colors.cyan)
 term.at(1, 1).clearLine()
-term.at(1, 1).write("=== LeonCore Shell ===")
+term.at(1, 1).write("=== LeonOS Shell ===")
 
 -- 恢复颜色设置
 term.setTextColor(old_fg)
@@ -76,7 +76,7 @@ for k, v in pairs(aliases) do
   shell.setAlias(k, v)
 end
 
-local completions = "/LeonCore/completions"
+local completions = "/leonos/completions"
 for _, prog in ipairs(fs.list(completions)) do
   dofile(fs.combine(completions, prog))
 end
@@ -89,7 +89,7 @@ local history = {}
 --  ffff
 -- ]])
 -- paintutils.drawImage(image, term.getCursorPos())
--- textutils.coloredPrint(colors.yellow, "Welcome using the beta version of LeonCore!", colors.white)
+-- textutils.coloredPrint(colors.yellow, "Welcome using the beta version of LeonOS!", colors.white)
 while true do
   term.setTextColor(colors.yellow)
   rc.write("$ "..shell.dir().." # ")

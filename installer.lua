@@ -1,8 +1,8 @@
--- LeonCore installer
+-- LeonOS installer
 local INSTALLER_VERSION = "1.0.1 Beta 2"
-local DEFAULT_ROM_DIR = "/LeonCore"
+local DEFAULT_ROM_DIR = "/leonos"
 
-print("Start loading LeonCore installer ("..INSTALLER_VERSION..")...")
+print("Start loading LeonOS installer ("..INSTALLER_VERSION..")...")
 print("[Installer] Loading module 1")
 local function dl(f)
   local hand, err = http.get(f, nil, true)
@@ -17,7 +17,7 @@ local function dl(f)
 end
 print("[Installer] Loading done.")
 print("[Installer] Loading module 2")
--- set up package.loaded for LeonCore libs
+-- set up package.loaded for LeonOS libs
 package.loaded.rc = {
   expect = require("cc.expect").expect,
   write = write, sleep = sleep
@@ -51,7 +51,7 @@ local function rcload(f)
 end
 print("[Installer] Loading done.")
 print("[Installer] Loading module 8")
--- get LeonCore's textutils with its extra utilities
+-- get LeonOS's textutils with its extra utilities
 local tu = rcload("apis/textutils.lua")
 
 local function progress(y, a, b)
@@ -77,7 +77,7 @@ local old_bg = term.getBackgroundColor()
 term.setTextColor(colors.white)
 term.setBackgroundColor(colors.cyan)
 term.at(1, 1).clearLine()
-term.at(1, 1).write("=== LeonCore Installer ===")
+term.at(1, 1).write("=== LeonOS Installer ===")
 
 -- 恢复颜色设置
 term.setTextColor(old_fg)
@@ -89,8 +89,8 @@ for y=2, term.getSize() do
 end
 term.at(1, 2)
 tu.coloredPrint(colors.yellow,
-  "LeonCore Installer (v"..INSTALLER_VERSION..")\n=======================")
-tu.coloredPrint("You are going to install LeonCore "..INSTALLER_VERSION.." to your computer.")
+  "LeonOS Installer (v"..INSTALLER_VERSION..")\n=======================")
+tu.coloredPrint("You are going to install LeonOS "..INSTALLER_VERSION.." to your computer.")
 tu.coloredPrint("This will ",colors.red,"OVERWRITE any existing files", colors.white, " in the computer.")
 tu.coloredPrint("If you want to keep the existing files, please backup them first.")
 tu.coloredPrint(colors.yellow, "Are you sure? (y/n)")
@@ -107,10 +107,10 @@ ROM_DIR = DEFAULT_ROM_DIR
 
 ROM_DIR = "/"..shell.resolve(ROM_DIR)
 
-settings.set("LeonCore.rom_dir", ROM_DIR)
+settings.set("LeonOS.rom_dir", ROM_DIR)
 settings.save()
 
-tu.coloredPrint(colors.white, "Installing LeonCore "..INSTALLER_VERSION.."...", colors.white)
+tu.coloredPrint(colors.white, "Installing LeonOS "..INSTALLER_VERSION.."...", colors.white)
 
 local function bullet(t)
   tu.coloredWrite(colors.red, "- ", colors.white, t)

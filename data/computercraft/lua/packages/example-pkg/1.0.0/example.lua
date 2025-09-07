@@ -18,7 +18,7 @@ function drawTopBar()
 end
 
 drawTopBar()
-print("\nThis is an example package that demonstrates the features of LeonCore package manager.")
+print("\nThis is an example package that demonstrates the features of LeonOS package manager.")
 print("\nUsage:")
 print("  pkg install example-pkg  - Install this package")
 print("  pkg remove example-pkg   - Uninstall this package")
