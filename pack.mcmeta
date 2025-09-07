@@ -1,0 +1,6 @@
+{
+    "pack": {
+        "description": "A saner LeonOS implementation",
+        "pack_format": 9
+    }
+}

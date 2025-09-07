@@ -1,0 +1,73 @@
+=== Turtle Auto Farmer ===
+>>color white
+A program that automatically harvests mature wheat, plants seeds, and deposits wheat in chests.
+
+== Usage ==
+>>color yellow
+turtle_farmer
+>>color white
+
+== Description ==
+The Turtle Auto Farmer is an agricultural program that allows a turtle to:
+- Automatically detect and harvest mature wheat
+- Plant wheat seeds in suitable soil
+- Deposit harvested wheat in nearby chests when a full stack is collected
+- Monitor fuel levels during operation
+
+== Features ==
+>>color green
+- Automatic detection of mature wheat
+- Seed planting in soil or farmland
+- Wheat storage management (deposits at 64 units)
+- Fuel level monitoring
+- Chest detection in all directions
+- Status updates during operation
+>>color white
+
+== How It Works ==
+1. The turtle will move forward and search for mature wheat
+2. When mature wheat is detected, it will be harvested
+3. The turtle will collect wheat and seeds
+4. Seeds are automatically stored in a designated slot for planting
+5. When a full stack of wheat (64) is collected, the turtle will:
+   - Search for nearby chests in all directions
+   - Deposit the wheat into the chest
+6. The turtle will plant seeds on suitable ground as it moves
+7. The program runs until manually stopped with Ctrl+T or encounters critical issues
+
+== Fuel Management ==
+- The turtle will check fuel levels continuously
+- Operation will stop if fuel drops below 200 units
+- Ensure the turtle has sufficient fuel before starting
+
+== Inventory Management ==
+- Seeds are automatically stored in slot 1
+- Wheat is automatically stored in slot 2
+- When wheat in slot 2 reaches 64 units, the turtle will search for a chest
+- The turtle will deposit wheat in any detected chest
+
+== Important Notes ==
+>>color red
+- Start the turtle on farmland or near a wheat field
+- Ensure the turtle has at least one wheat seed in slot 1 initially
+- Place a chest nearby to collect harvested wheat
+- Monitor the turtle's progress periodically
+- Press Ctrl+T to stop the program at any time
+>>color white
+
+== Troubleshooting ==
+- If the turtle gets stuck, press Ctrl+T to stop and manually move it
+- If it can't find a chest, place one nearby and restart
+- If it runs out of seeds, manually add seeds to slot 1
+- If it runs out of fuel, manually add fuel to its inventory
+
+== Examples ==
+Start the auto farmer:
+>>color yellow
+turtle_farmer
+>>color white
+
+View this help message:
+>>color yellow
+turtle_farmer help
+>>color white

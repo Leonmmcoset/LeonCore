@@ -1,0 +1,11 @@
+{
+  "name": "example",
+  "version": "1.0.1",
+  "description": "An example package for LeonOS",
+  "author": "LeonMMcoset",
+  "license": "MIT",
+  "dependencies": {},
+  "files": [
+    "example.lua"
+  ]
+}

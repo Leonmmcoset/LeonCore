@@ -1,0 +1,104 @@
+=== Turtle Control ===
+
+A program to control turtle movement, mining, and inventory management in CC Tweaked.
+
+== Basic Usage ==
+
+>>color yellow
+turtle <command> [arguments]
+>>color white
+
+== Available Commands ==
+
+- **Movement Commands:**
+  - **forward**, **f**: Move forward
+  - **back**, **b**: Move back
+  - **up**, **u**: Move up
+  - **down**, **d**: Move down
+  - **left**, **l**: Turn left
+  - **right**, **r**: Turn right
+
+- **Mining Commands:**
+  - **dig** [up|down]: Dig forward (or up/down)
+  - **digall**: Dig in all directions (forward, up, down)
+
+- **Placement Commands:**
+  - **place** [up|down]: Place block forward (or up/down)
+
+- **Inventory Commands:**
+  - **inventory**, **inv**: Show inventory
+  - **select** <slot>: Select slot (1-16)
+
+- **Fuel Commands:**
+  - **refuel** [amount]: Refuel using items from inventory (optional amount)
+
+- **Utility Commands:**
+  - **help**, **h**: Show this help message
+  - **version**, **v**: Show program version
+
+== Usage Examples ==
+
+1. Move forward:
+>>color yellow
+turtle forward
+>>color white
+
+2. Move up:
+>>color yellow
+turtle up
+>>color white
+
+3. Turn right:
+>>color yellow
+turtle right
+>>color white
+
+4. Dig upward:
+>>color yellow
+turtle dig up
+>>color white
+
+5. Place a block downward:
+>>color yellow
+turtle place down
+>>color white
+
+6. Show inventory:
+>>color yellow
+turtle inventory
+>>color white
+
+7. Select slot 5:
+>>color yellow
+turtle select 5
+>>color white
+
+8. Dig in all directions:
+>>color yellow
+turtle digall
+>>color white
+
+9. Refuel with maximum amount:
+>>color yellow
+turtle refuel
+>>color white
+
+10. Refuel with specific amount:
+>>color yellow
+turtle refuel 10
+>>color white
+
+== Notes ==
+
+- This program must be run on a turtle
+- Movement and mining commands require fuel
+- Mining commands require appropriate tools
+- Placement commands require blocks in the selected slot
+- Inventory slots are numbered from 1 to 16
+
+== Troubleshooting ==
+
+- If movement fails, check fuel level and ensure path is clear
+- If mining fails, check if you have the right tool for the block
+- If placing fails, ensure you have blocks in the selected slot
+- If inventory is not displaying correctly, try selecting a slot first

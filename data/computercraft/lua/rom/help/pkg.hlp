@@ -1,0 +1,83 @@
+=== LeonOS Package Manager ===
+
+The `pkg` command is LeonOS's lightweight package manager, allowing you to install, update, remove, and manage software packages.
+
+== Basic Usage ==
+
+>>color yellow
+pkg <command> [options]
+>>color white
+
+== Available Commands ==
+
+- **install <package>**: Install a package
+- **update <package>**: Update a package (leave empty to update all)
+- **remove <package>**: Remove a package
+- **list**: List all installed packages
+- **search <query>**: Search for packages
+- **info <package>**: Show package information
+- **init <package>**: Create a new package
+- **help**: Show help message
+
+== Command Options ==
+
+The following options are available for most commands:
+
+- `-f`, `--force`: Force operation (install, update)
+- `-l`, `--local`: Install from local file
+- `-v`, `--verbose`: Show detailed output
+- `-h`, `--help`: Show help information
+
+== Usage Examples ==
+
+1. Install a package:
+>>color yellow
+pkg install example-pkg
+>>color white
+
+2. Force install a package:
+>>color yellow
+pkg install --force example-pkg
+>>color white
+
+3. Update all packages:
+>>color yellow
+pkg update
+>>color white
+
+4. Remove a package:
+>>color yellow
+pkg remove example-pkg
+>>color white
+
+5. List installed packages:
+>>color yellow
+pkg list
+>>color white
+
+6. Search for packages:
+>>color yellow
+pkg search editor
+>>color white
+
+7. Show package information:
+>>color yellow
+pkg info example-pkg
+>>color white
+
+8. Create a new package:
+>>color yellow
+pkg init my-new-pkg
+>>color white
+
+== Package Creation ==
+
+When creating a new package with `pkg init <package>`, the following structure is created:
+
+/packages/
+  <package>/
+    1.0.0/
+      package.json  - Package metadata
+      <package>.lua - Main package file
+
+You can edit these files to customize your package before installing it.

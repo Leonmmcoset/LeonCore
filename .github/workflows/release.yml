@@ -1,0 +1,51 @@
+name: Release
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+jobs:
+  build-release-notes:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Get all tags and check current/previous
+        id: get_tags
+        run: |
+          git fetch --tags
+          TAGS=$(git tag --sort=-creatordate)
+          COUNT=$(echo "$TAGS" | wc -l)
+          if [ "$COUNT" -le 1 ]; then
+            echo "PREV_TAG=" >> $GITHUB_ENV
+          else
+            # 第二新（第2行）为上一个tag
+            PREV_TAG=$(echo "$TAGS" | sed -n '2p')
+            echo "PREV_TAG=$PREV_TAG" >> $GITHUB_ENV
+          fi
+          echo "CURRENT_TAG=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
+
+      - name: Generate changelog
+        id: changelog
+        run: |
+          if [ -z "$PREV_TAG" ]; then
+            # 首次release，显示全部历史
+            COMMITS=$(git log --pretty=format:"- %s (%an)")
+          else
+            COMMITS=$(git log $PREV_TAG..$CURRENT_TAG --pretty=format:"- %s (%an)")
+          fi
+          echo "$COMMITS" > commits.txt
+          echo "COMMITS<<EOF" >> $GITHUB_ENV
+          cat commits.txt >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+
+      - name: Update GitHub Release notes
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ env.CURRENT_TAG }}
+          body: |
+            ${{ env.COMMITS }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

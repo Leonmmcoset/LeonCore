@@ -1,0 +1,101 @@
+=== How to Download Packages ===
+
+In LeonOS, you can use the `pkg` command to download and install software packages. This help document will detailed explain how to use this command.
+
+== Basic Usage ==
+
+Download and install a package:
+>>color yellow
+pkg install <package_name>
+>>color white
+
+== Command Options ==
+
+The `pkg install` command supports the following options:
+
+- `-f`, `--force`: Force installation, overwrite existing files
+- `-v`, `--verbose`: Show detailed installation process
+- `-h`, `--help`: Show help information
+
+== Usage Examples ==
+
+1. Install a package:
+
+>>color yellow
+pkg install example-package
+>>color white
+
+2. Force install a package:
+
+>>color yellow
+pkg install --force example-package
+>>color white
+
+3. Install a package with detailed information:
+
+>>color yellow
+pkg install -v example-package
+>>color white
+
+4. View help for `pkg install` command:
+
+>>color yellow
+pkg install --help
+>>color white
+
+== Search for Packages ==
+
+Before installing a package, you can search for available packages:
+
+>>color yellow
+pkg search <search_keyword>
+>>color white
+
+Example:
+
+>>color yellow
+pkg search editor
+>>color white
+
+== View Package Information ==
+
+Before installing a package, you can view detailed information about it:
+
+>>color yellow
+pkg info <package_name>
+>>color white
+
+Example:
+
+>>color yellow
+pkg info example-package
+>>color white
+
+== Update Packages ==
+
+You can update installed packages using the following command:
+
+>>color yellow
+pkg update <package_name>
+>>color white
+
+If you don't specify a package name, all installed packages will be updated:
+
+>>color yellow
+pkg update
+>>color white
+
+== Frequently Asked Questions ==
+
+Q: What should I do if I encounter a network error when downloading a package?
+A: Please check your network connection to ensure you can access the Internet. If the problem persists, please try again later.
+
+Q: How can I view installed packages?
+A: You can use the `pkg list` command to view all installed packages.
+
+Q: Where can I get package names?
+A: You can search for packages using the `pkg search` command or check the official package repository list.
+
+== Exit Help ==
+
+Press the ESC key to exit the help document.

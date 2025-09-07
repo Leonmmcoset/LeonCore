@@ -1,0 +1,23 @@
+=== Storage Command ===
+
+Description:
+Displays storage information for the computer, including total space, used space,
+free space, and storage devices.
+
+Usage:
+storage [options]
+
+Options:
+--help, -h    Show this help message
+--verbose, -v Show detailed storage information
+
+Examples:
+  storage
+    Display basic storage information
+
+  storage --verbose
+    Display detailed storage information including all drives
+
+Tips:
+- Use the 'delete' command to free up space on your computer.
+- Regularly check storage usage to prevent running out of space.
