@@ -1,5 +1,5 @@
 -- 'parallel' implementation
--- uses LeonOS's native threading
+-- uses LeonCore's native threading
 
 local parallel = {}
 

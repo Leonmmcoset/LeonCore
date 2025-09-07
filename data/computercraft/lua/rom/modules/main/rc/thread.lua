@@ -363,7 +363,7 @@ function api.start()
 
   local _native = term.native()
   wrappedNative = window.create(_native, 1, 1, _native.getSize())
-  api.launchTab("/leonos/programs/shell.lua", "shell")
+  api.launchTab("/LeonCore/programs/shell.lua", "shell")
 
   rc.pushEvent("init")
 

@@ -1,4 +1,4 @@
--- LeonOS shell api
+-- LeonCore shell api
 
 local shell = {}
 
@@ -32,7 +32,7 @@ function shell.init(env)
   copyIfPresent("aliases", vars)
   completions[vars.parentShell or 0] = completions[vars.parentShell or 0] or {}
 
-  vars.path = vars.path or ".:/leonos/programs"
+  vars.path = vars.path or ".:/LeonCore/programs"
   vars.env = env or _ENV or _G
 end
 

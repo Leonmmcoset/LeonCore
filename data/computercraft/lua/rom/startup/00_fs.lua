@@ -22,7 +22,7 @@ local function expect(...)
 end
 
 -- path resolution:
--- if the path begins with /leonos, then redirect to wherever that actually
+-- if the path begins with /LeonCore, then redirect to wherever that actually
 -- is; otherwise, resolve the path based on the current program's working
 -- directory
 -- this is to allow .OS to run from anywhere
@@ -72,8 +72,8 @@ function fs.list(path)
   local _, files = pcall(list, path)
   if not _ then return nil, files end
   if path == "/" then
-    -- inject /leonos into the root listing
-    if not exists("/leonos") then
+    -- inject /LeonCore into the root listing
+    if not exists("/LeonCore") then
       files[#files+1] = "rc"
     end
   end

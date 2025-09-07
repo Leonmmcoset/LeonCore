@@ -1,4 +1,4 @@
--- LeonOS compatibility, in theory
+-- LeonCore compatibility, in theory
 
 local rc = require("rc")
 local settings = require("settings")
@@ -50,9 +50,9 @@ nEnv.read = nEnv.term.read
 nEnv.sleep = nEnv.os.sleep
 
 function nEnv.os.version()
-  return "LeonOS 1.0 ALpha 1"
+  return "LeonCore 1.0 ALpha 1"
 end
 
-local func, err = loadfile("/leonos/programs/shell.lua", "t", nEnv)
+local func, err = loadfile("/LeonCore/programs/shell.lua", "t", nEnv)
 if not func then error(err, 0) end
 func()

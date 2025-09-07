@@ -1,8 +1,8 @@
--- LeonOS installer
+-- LeonCore installer
 local INSTALLER_VERSION = "1.0.1 Beta 2"
-local DEFAULT_ROM_DIR = "/leonos"
+local DEFAULT_ROM_DIR = "/LeonCore"
 
-print("Start loading LeonOS installer ("..INSTALLER_VERSION..")...")
+print("Start loading LeonCore installer ("..INSTALLER_VERSION..")...")
 print("[Installer] Loading module 1")
 local function dl(f)
   local hand, err = http.get(f, nil, true)
@@ -17,7 +17,7 @@ local function dl(f)
 end
 print("[Installer] Loading done.")
 print("[Installer] Loading module 2")
--- set up package.loaded for LeonOS libs
+-- set up package.loaded for LeonCore libs
 package.loaded.rc = {
   expect = require("cc.expect").expect,
   write = write, sleep = sleep
@@ -47,11 +47,11 @@ print("[Installer] Loading done.")
 print("[Installer] Loading module 7")
 local function rcload(f)
   return ghload(
-    "Leonmmcoset/LeonOS/refs/heads/main/data/computercraft/lua/rom/"..f, f)
+    "Leonmmcoset/LeonCore/refs/heads/main/data/computercraft/lua/rom/"..f, f)
 end
 print("[Installer] Loading done.")
 print("[Installer] Loading module 8")
--- get LeonOS's textutils with its extra utilities
+-- get LeonCore's textutils with its extra utilities
 local tu = rcload("apis/textutils.lua")
 
 local function progress(y, a, b)
@@ -77,7 +77,7 @@ local old_bg = term.getBackgroundColor()
 term.setTextColor(colors.white)
 term.setBackgroundColor(colors.cyan)
 term.at(1, 1).clearLine()
-term.at(1, 1).write("=== LeonOS Installer ===")
+term.at(1, 1).write("=== LeonCore Installer ===")
 
 -- 恢复颜色设置
 term.setTextColor(old_fg)
@@ -89,8 +89,8 @@ for y=2, term.getSize() do
 end
 term.at(1, 2)
 tu.coloredPrint(colors.yellow,
-  "LeonOS Installer (v"..INSTALLER_VERSION..")\n=======================")
-tu.coloredPrint("You are going to install LeonOS "..INSTALLER_VERSION.." to your computer.")
+  "LeonCore Installer (v"..INSTALLER_VERSION..")\n=======================")
+tu.coloredPrint("You are going to install LeonCore "..INSTALLER_VERSION.." to your computer.")
 tu.coloredPrint("This will ",colors.red,"OVERWRITE any existing files", colors.white, " in the computer.")
 tu.coloredPrint("If you want to keep the existing files, please backup them first.")
 tu.coloredPrint(colors.yellow, "Are you sure? (y/n)")
@@ -107,10 +107,10 @@ ROM_DIR = DEFAULT_ROM_DIR
 
 ROM_DIR = "/"..shell.resolve(ROM_DIR)
 
-settings.set("LeonOS.rom_dir", ROM_DIR)
+settings.set("LeonCore.rom_dir", ROM_DIR)
 settings.save()
 
-tu.coloredPrint(colors.white, "Installing LeonOS "..INSTALLER_VERSION.."...", colors.white)
+tu.coloredPrint(colors.white, "Installing LeonCore "..INSTALLER_VERSION.."...", colors.white)
 
 local function bullet(t)
   tu.coloredWrite(colors.red, "- ", colors.white, t)
@@ -123,7 +123,7 @@ end
 
 bullet("Getting repository tree...")
 
-local repodata = dl("https://gh.catmak.name/https://api.github.com/repos/Leonmmcoset/LeonOS/git/trees/main?recursive=1")
+local repodata = dl("https://gh.catmak.name/https://api.github.com/repos/Leonmmcoset/LeonCore/git/trees/main?recursive=1")
 
 repodata = json.decode(repodata)
 
@@ -179,7 +179,7 @@ for i=1, #to_dl, 1 do
   local v = to_dl[i]
   if v.type == "blob" then
     parallels[#parallels+1] = function()
-      local data = dl("https://gh.catmak.name/https://raw.githubusercontent.com/Leonmmcoset/LeonOS/refs/heads/main/data/computercraft/lua/"..v.path)
+      local data = dl("https://gh.catmak.name/https://raw.githubusercontent.com/Leonmmcoset/LeonCore/refs/heads/main/data/computercraft/lua/"..v.path)
       assert(io.open(v.real_path, "w")):write(data):close()
       done = done + 1
       progress(pby, done, #to_dl)
@@ -196,7 +196,7 @@ ok()
 assert(io.open(
  fs.exists("/startup.lua") and "/unbios-rc.lua" or "/startup.lua", "w"))
   :write(dl(
-   "https://gh.catmak.name/https://raw.githubusercontent.com/Leonmmcoset/LeonOS/refs/heads/main/unbios.lua"
+   "https://gh.catmak.name/https://raw.githubusercontent.com/Leonmmcoset/LeonCore/refs/heads/main/unbios.lua"
   )):close()
 
 tu.coloredPrint(colors.yellow, "Your computer will restart in 3 seconds.")

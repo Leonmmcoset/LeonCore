@@ -1,5 +1,5 @@
 -- UnBIOS by JackMacWindows
--- Modified by Leonmmcoset to work with LeonOS
+-- Modified by Leonmmcoset to work with LeonCore
 -- This will undo most of the changes/additions made in the BIOS, but some things may remain wrapped if `debug` is unavailable
 -- To use, just place a `bios.lua` in the root of the drive, and run this program
 -- Here's a list of things that are irreversibly changed:
@@ -15,7 +15,7 @@
 -- Licensed under the MIT license
 if _HOST:find("UnBIOS") then return end
 local keptAPIs = {bit32 = true, bit = true, ccemux = true, config = true, coroutine = true, debug = true, fs = true, http = true, io = true, mounter = true, os = true, periphemu = true, peripheral = true, redstone = true, rs = true, term = true, utf8 = true, _HOST = true, _CC_DEFAULT_SETTINGS = true, _CC_DISABLE_LUA51_FEATURES = true, _VERSION = true, assert = true, collectgarbage = true, error = true, gcinfo = true, getfenv = true, getmetatable = true, ipairs = true, __inext = true, load = true, loadstring = true, math = true, newproxy = true, next = true, pairs = true, pcall = true, rawequal = true, rawget = true, rawlen = true, rawset = true, select = true, setfenv = true, setmetatable = true, string = true, table = true, tonumber = true, tostring = true, type = true, unpack = true, xpcall = true, turtle = true, pocket = true, commands = true, _G = true, _RC_ROM_DIR = true}
-_G._RC_ROM_DIR = settings.get("LeonOS.rom_dir") or error("LeonOS.rom_dir is not set!", 0)
+_G._RC_ROM_DIR = settings.get("LeonCore.rom_dir") or error("LeonCore.rom_dir is not set!", 0)
 local t = {}
 for k in pairs(_G) do if not keptAPIs[k] then table.insert(t, k) end end
 for _,k in ipairs(t) do _G[k] = nil end

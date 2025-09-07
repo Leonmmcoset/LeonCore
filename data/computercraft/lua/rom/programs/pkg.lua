@@ -1,4 +1,4 @@
--- pkg: Lightweight package manager for LeonOS
+-- pkg: Lightweight package manager for LeonCore
 
 -- 程序顶部名称栏
 local term = require("term")
@@ -16,7 +16,7 @@ local old_bg = term.getBackgroundColor()
 term.setTextColor(colors.white)
 term.setBackgroundColor(colors.cyan)
 term.at(1, 1).clearLine()
-term.at(1, 1).write("=== LeonOS Package Manager ===")
+term.at(1, 1).write("=== LeonCore Package Manager ===")
 
 -- 恢复颜色设置
 term.setTextColor(old_fg)
@@ -25,7 +25,7 @@ term.at(1, 2)
 
 -- 包管理器配置
 local pkg_config = {
-  repo_url = "https://example.com/leonos/packages", -- 包仓库URL
+  repo_url = "https://example.com/LeonCore/packages", -- 包仓库URL
   local_pkg_dir = "/packages",                     -- 本地包存储目录
   installed_db = "/packages/installed.json",       -- 已安装包数据库
   cache_dir = "/packages/cache"                     -- 缓存目录
@@ -50,8 +50,8 @@ local function create_package(pkg_name)
   local package_json = {
     name = pkg_name,
     version = pkg_version,
-    description = "A new package for LeonOS",
-    author = "LeonOS User",
+    description = "A new package for LeonCore",
+    author = "LeonCore User",
     license = "MIT",
     dependencies = {},
     files = {
@@ -92,7 +92,7 @@ function drawTopBar()
 end
 
 drawTopBar()
-print("\nThis is the ]] .. pkg_name .. [[ package for LeonOS.")
+print("\nThis is the ]] .. pkg_name .. [[ package for LeonCore.")
 print("\nUsage:")
 print("  pkg install ]] .. pkg_name .. [[  - Install this package")
 print("  pkg remove ]] .. pkg_name .. [[   - Uninstall this package")
@@ -396,8 +396,8 @@ local function show_package_info(pkg_name)
   -- 模拟包信息
   print("  Name: " .. pkg_name)
   print("  Version: 1.0.0")
-  print("  Description: A sample package for LeonOS")
-  print("  Author: LeonOS Team")
+  print("  Description: A sample package for LeonCore")
+  print("  Author: LeonCore Team")
   print("  Dependencies: none")
 end
 

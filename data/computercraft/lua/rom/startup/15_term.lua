@@ -39,7 +39,7 @@ local valid = {
   getPaletteColor = true,
   getPaletteColour = true,
 
-  -- LeonOS-PC graphics mode settings
+  -- LeonCore-PC graphics mode settings
   setGraphicsMode = not not native.setGraphicsMode,
   getGraphicsMode = not not native.getGraphicsMode,
   drawPixels = not not native.drawPixels,

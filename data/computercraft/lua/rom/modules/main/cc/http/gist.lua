@@ -1,5 +1,5 @@
 --- gist.lua - Gist client for ComputerCraft
--- Made by JackMacWindows for LeonOS-PC and CC: Tweaked
+-- Made by JackMacWindows for LeonCore-PC and CC: Tweaked
 --
 -- @module cc.http.gist
 

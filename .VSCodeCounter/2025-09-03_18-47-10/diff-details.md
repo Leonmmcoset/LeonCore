@@ -2,7 +2,7 @@
 
 Date : 2025-09-03 18:47:10
 
-Directory d:\\Projects\\Lua\\LeonOS\\leonos
+Directory d:\\Projects\\Lua\\LeonCore\\LeonCore
 
 Total : 0 files,  0 codes, 0 comments, 0 blanks, all 0 lines
 

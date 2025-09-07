@@ -6,7 +6,7 @@ local expect = require("cc.expect").expect
 local completion = require("cc.completion")
 
 local help = {}
-help._DEFAULT_PATH = "/leonos/help"
+help._DEFAULT_PATH = "/LeonCore/help"
 
 function help.init()
   local vars = thread.vars()

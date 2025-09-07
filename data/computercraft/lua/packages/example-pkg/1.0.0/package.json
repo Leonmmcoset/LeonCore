@@ -1,7 +1,7 @@
 {
   "name": "example",
   "version": "1.0.1",
-  "description": "An example package for LeonOS",
+  "description": "An example package for LeonCore",
   "author": "LeonMMcoset",
   "license": "MIT",
   "dependencies": {},

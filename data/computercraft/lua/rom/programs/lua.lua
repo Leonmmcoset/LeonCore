@@ -30,7 +30,7 @@ function env.exit() run = false end
 
 term.setTextColor(colors.yellow)
 
-print("LeonOS Lua REPL.\nCall exit() to exit.")
+print("LeonCore Lua REPL.\nCall exit() to exit.")
 
 local history = {}
 while run do

@@ -2,7 +2,7 @@
 
 Date : 2025-09-03 18:47:10
 
-Directory d:\\Projects\\Lua\\LeonOS\\leonos
+Directory d:\\Projects\\Lua\\LeonCore\\LeonCore
 
 Total : 123 files,  9165 codes, 862 comments, 2062 blanks, all 12089 lines
 
